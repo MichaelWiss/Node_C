@@ -5,5 +5,8 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.html'
 })
 export class AppComponent {
-    content = 'Cashew Lover';
+    message = {
+    	content: 'A message',
+    	author: 'Michael'
+    };
 }
