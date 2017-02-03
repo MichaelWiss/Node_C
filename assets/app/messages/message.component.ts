@@ -23,6 +23,8 @@ export class MessageComponent {
     @Input() message: Message;
     @Output() editClicked = new EventEmitter<string>();
 
+    
+
     onEdit() {
     	this.editClicked.emit('A new year');
     }
