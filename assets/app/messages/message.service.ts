@@ -1,11 +1,12 @@
 import { Message } from "./message.medal";
 
 
-export class MessageService{
-   private message: Message[]=[];
+export class MessageService {
+   private messages: Message[]=[];
 
-  addMessage(message: Message){
+  addMessage(message: Message) {
      this.messages.push(message);
+     console.log(this.messages);
   }
 
   getMessage(){
@@ -13,6 +14,6 @@ export class MessageService{
   }
 
   deleteMessage(message: Message) {
-  	this.message.splice(this.messages.indexOf(message), 1);
+  	this.messages.splice(this.messages.indexOf(message), 1);
   }
 }
