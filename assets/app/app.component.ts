@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Message } from "./messages/message.model";
+
 
 
 @Component({
@@ -7,8 +7,5 @@ import { Message } from "./messages/message.model";
     templateUrl: './app.component.html',
 })
 export class AppComponent {
-    messages: Message[] = [
-    new Message('Some message', 'Michael'),
-    new Message('Some message', 'Sarah')
-  ];
+    
 }
