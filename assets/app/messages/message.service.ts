@@ -2,5 +2,9 @@ import { Message } from "./message.medal";
 
 
 export class MessageService{
-  message: Message[]=[];
+   private message: Message[]=[];
+
+  addMessage(message: Message){
+     this.messages.push(message);
+  }
 }
