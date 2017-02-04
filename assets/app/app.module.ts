@@ -9,6 +9,7 @@ import { MessageInputComponent } from "./messages/message-input.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { AuthenticationComponent } from "./auth/authentication.component";
 import { HeaderComponent } from "./header.component.ts";
+import { routing } from "./app.routing";
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { HeaderComponent } from "./header.component.ts";
         AuthenticationComponent,
         HeaderComponent
     ],
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, FormsModule, routing],
     bootstrap: [AppComponent]
 })
 export class AppModule {
