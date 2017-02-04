@@ -11,8 +11,8 @@ export class MessageInputComponent {
 	constructor(private messageService: MessageService) {}
 
      onSubmit(form: NgForm) {
-     	console.log(form);
-     	// const message = new Message(value, 'Max');
-     	// this.messageService.addMessage(message);
+     	const message = new Message(form.value.content, 'Michael');
+     	this.messageService.addMessage(message);
+     	form.resetForm();
      }
 }
