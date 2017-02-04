@@ -1,4 +1,4 @@
-import { Message } from "./message.medal";
+import { Message } from "./message.model";
 
 
 export class MessageService {
@@ -9,7 +9,7 @@ export class MessageService {
      console.log(this.messages);
   }
 
-  getMessage(){
+  getMessages(){
   	  return this.messages;
   }
 
