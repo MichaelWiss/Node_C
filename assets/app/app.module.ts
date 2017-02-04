@@ -11,6 +11,8 @@ import { AuthenticationComponent } from "./auth/authentication.component";
 import { HeaderComponent } from "./header.component.ts";
 import { routing } from "./app.routing";
 import { LogoutComponent } from "./auth/logout.component";
+import { SignUpComponent } from "./auth/signup.component";
+import { SignInComponent } from "./auth/signin.component"
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { LogoutComponent } from "./auth/logout.component";
         MessagesComponent,
         AuthenticationComponent,
         HeaderComponent,
-        LogoutComponent
+        LogoutComponent,
+        SignUpComponent,
+        SignInComponent
     ],
     imports: [BrowserModule, FormsModule, routing],
     bootstrap: [AppComponent]
