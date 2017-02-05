@@ -12,6 +12,7 @@ export class SignUpComponent implements OnInit {
 
 	onSubmit() {
 		console.log(this.myForm);
+		this.myForm.reset();
 	}
 
 	ngOnInit() {
