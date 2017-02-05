@@ -6,9 +6,9 @@ import { Component } from "@angular/core";
        <header class="row">
         <nav class="col-md-8 col-md-offset-2">
            <ul class="nav nav-tabs">
-	          <li><a>Signup</a></li>
-	          <li><a>Signin</a></li>
-	          <li><a>Logout</a></li>
+	          <li><a [routerLink]="['signup']">Signup</a></li>
+	          <li><a [routerLink]="['signin']">Signin</a></li>
+	          <li><a [routerLink]="['logout']">Logout</a></li>
 		   </ul>
 		 </nav>
 	   </header>
