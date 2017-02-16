@@ -11,6 +11,7 @@ import { AuthenticationComponent } from "./auth/authentication.component";
 import { HeaderComponent } from "./header.component.ts";
 import { routing } from "./app.routing";
 import { LogoutComponent } from "./auth/logout.component";
+import { HttpModule } from "@angular/http";
 import { SignUpComponent } from "./auth/signup.component";
 import { SignInComponent } from "./auth/signin.component"
 
@@ -28,7 +29,12 @@ import { SignInComponent } from "./auth/signin.component"
         SignUpComponent,
         SignInComponent
     ],
-    imports: [BrowserModule, FormsModule, routing, ReactiveFormsModule],
+    imports: [
+              BrowserModule,
+              FormsModule,
+              routing, 
+              ReactiveFormsModule
+              ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
