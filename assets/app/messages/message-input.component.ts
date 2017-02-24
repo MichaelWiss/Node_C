@@ -8,6 +8,7 @@ import { Message } from "./message.model";
 	templateUrl: './message-input.component.html',
 })
 export class MessageInputComponent {
+    message: Message;
 	constructor(private messageService: MessageService) {}
 
      onSubmit(form: NgForm) {
