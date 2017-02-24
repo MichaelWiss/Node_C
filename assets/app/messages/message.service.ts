@@ -25,7 +25,13 @@ export class MessageService {
   }
 
   getMessages(){
-  	  return this.messages;
+  	  return this.http.get('http://localhost:3000/message')
+           .map((response: Response => {
+             const messages = response.json().obj;
+
+
+           }))
+
   }
 
   deleteMessage(message: Message) {
