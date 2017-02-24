@@ -24,15 +24,17 @@ export class MessageService {
          .catch((error: Response) => Observable.throw(error.json()));
   }
 
-  getMessages(){
+  getMessages() {
   	  return this.http.get('http://localhost:3000/message')
-           .map((response: Response => {
+           .map((response: Response) => {
              const messages = response.json().obj;
             let transformedMessages: Message[] = [];
             for (let message of messages) {
                 transformedMessages.push(new Message(message.content, message.id, 'Dummy', null));
             }
-         });
+            return transformedMessages;
+         })
+           .catch((error: Response) => Observable.throw(error.json()));
 
   }
 
