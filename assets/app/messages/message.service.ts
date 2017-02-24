@@ -1,5 +1,5 @@
 import { Http, Response, Headers } from "@angular/http";
-import { Injectable } from "@angular/core";
+import { Injectable, EvenEmitter } from "@angular/core";
 import { Observable } from "rxjs";
 import { Message } from "./message.model";
 import { HttpModule } from '@angular/http';
@@ -12,6 +12,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class MessageService {
    private messages: Message[]=[];
+   MessageIsEdit = new EventEmitter
 
    constructor(private http: Http) {}
 
@@ -24,18 +25,23 @@ export class MessageService {
          .catch((error: Response) => Observable.throw(error.json()));
   }
 
+
   getMessages() {
   	  return this.http.get('http://localhost:3000/message')
            .map((response: Response) => {
-            const messages = response.json().obj;
-            let transformedMessages: Message[] = [];
-            for (let message of messages) {
-                transformedMessages.push(new Message(message.content, 'Dummy', message.id, null));
-            }
-            this.messages = transformedMessages;
-            return transformedMessages;
+                const messages = response.json().obj;
+                let transformedMessages: Message[] = [];
+                for (let message of messages) {
+                    transformedMessages.push(new Message(message.content, 'Dummy', message.id, null));
+                }
+                this.messages = transformedMessages;
+                return transformedMessages;
          })
            .catch((error: Response) => Observable.throw(error.json()));
+ }
+
+ editMessage(message: Message) {
+
  }
 
   deleteMessage(message: Message) {
