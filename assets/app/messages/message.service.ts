@@ -1,5 +1,5 @@
 import { Http, Response, Headers } from "@angular/http";
-import { Injectable, EvenEmitter } from "@angular/core";
+import { Injectable, EventEmitter } from "@angular/core";
 import { Observable } from "rxjs";
 import { Message } from "./message.model";
 import { HttpModule } from '@angular/http';
