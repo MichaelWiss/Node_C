@@ -29,7 +29,7 @@ export class MessageComponent {
     
 
     onEdit() {
-    	
+    	thos.messageService.editMessage(this.message);
     }
     onDelete() {
       this.messageService.deleteMessage(this.message);

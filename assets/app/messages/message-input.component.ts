@@ -7,8 +7,9 @@ import { Message } from "./message.model";
 	selector: 'app-message-input',
 	templateUrl: './message-input.component.html',
 })
-export class MessageInputComponent {
+export class MessageInputComponent implements OnInit {
     message: Message;
+    
 	constructor(private messageService: MessageService) {}
 
      onSubmit(form: NgForm) {
@@ -19,5 +20,11 @@ export class MessageInputComponent {
                 error => console.log(error)
      	    	);
      	form.resetForm();
+     }
+
+     ngOnInit() {
+         this.messageService.messageIsEdit.subscribe(
+
+             );
      }
 }

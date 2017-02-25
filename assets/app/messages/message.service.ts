@@ -12,7 +12,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class MessageService {
    private messages: Message[]=[];
-   MessageIsEdit = new EventEmitter
+   messageIsEdit = new EventEmitter<Message>();
 
    constructor(private http: Http) {}
 
@@ -41,7 +41,7 @@ export class MessageService {
  }
 
  editMessage(message: Message) {
-
+    this.messageIsEdit.emit(message);
  }
 
   deleteMessage(message: Message) {
