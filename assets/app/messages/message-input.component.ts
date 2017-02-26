@@ -19,7 +19,11 @@ export class MessageInputComponent implements OnInit {
                 data => console.log(data),
                 error => console.log(error)
      	    	);
-     	form.resetForm();
+     	form.resetForm() 
+     }
+
+     onClear(form: NgForm){
+         form.resetForm();
      }
 
      ngOnInit() {
