@@ -23,7 +23,7 @@ export class MessageService {
      return this.http.post('http://locahost:3000/message', body, {headers: headers})
          .map((response: Response) => {
              const result = response.json();
-             return new Message(result.obj.content, 'Dummy', result.obj._id, null);
+             return new Message(result.obj.content, 'Dummy', result.obj._id,);
        })
          .catch((error: Response) => Observable.throw(error.json()));
   }
