@@ -39,6 +39,8 @@ router.post('/', function (req, res, next) {
     });
 });
 
-
+router.patch('/:id', function(req, res, next) {
+    Message.findById()
+});
 
 module.exports = router;
