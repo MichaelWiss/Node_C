@@ -13,12 +13,17 @@ export class MessageInputComponent implements OnInit {
 	constructor(private messageService: MessageService) {}
 
      onSubmit(form: NgForm) {
-     	const message = new Message(form.value.content, 'Michael');
+         if (this.message) {
+           this.message.content = form.value.content;
+           
+         } else{
+        const message = new Message(form.value.content, 'Michael');
      	this.messageService.addMessage(message)
      	    .subscribe(
                 data => console.log(data),
                 error => console.log(error)
      	    	);
+          }
      	form.resetForm() 
      }
 
