@@ -45,7 +45,11 @@ export class MessageService {
  }
 
  updateMessage(message: Message) {
-   
+     const body = JSON.stringify(message);
+     const headers = new Headers({'Content-Type': 'application/json'});
+     return this.http.patch('http://locahost:3000/message' + message.messageId, body, {headers: headers})
+         .map((response: Response) => response.json())
+         .catch((error: Response) => Observable.throw(error.json()));
  }
 
   deleteMessage(message: Message) {
