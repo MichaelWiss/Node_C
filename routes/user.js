@@ -12,6 +12,18 @@ router.post('/', function (req, res, next) {
         password: bcrypt.hashSync(req.body.password, 10),
         email: req.body.email
     });
+    user.save(function(err, result) {
+    	if(err) {
+    		return res.status(500).json({
+                  title: 'an error occurred',
+                  error: err
+    		});
+    	}
+    	res.status(201).json({
+    		message: 'User created',
+    		obj: result
+    	});
+    });
 });
 
 
