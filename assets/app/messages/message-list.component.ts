@@ -10,13 +10,14 @@ import { MessageService } from "./message.service";
         [message]="message" 
      		*ngFor="let message of messages"></app-message>
      	</div>      
-	`,
+	`
 })
 
 export class MessageListComponent implements OnInit {
 	messages: Message[];
   
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService) {}
+
   	ngOnInit() {
   		this.messageService.getMessages()
           .subscribe(

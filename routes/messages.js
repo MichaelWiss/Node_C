@@ -61,12 +61,14 @@ router.patch('/:id', function(req, res, next) {
                   error: err
             });
         }
-        res.status(20o).json({
+        res.status(200).json({
             message: 'Updated message',
             obj: result
           });
         });
     });
 });
+
+router.delete('/:id', function(req, res, next));
 
 module.exports = router;
