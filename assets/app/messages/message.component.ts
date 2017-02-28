@@ -26,11 +26,10 @@ export class MessageComponent {
 
     constructor(private messageService: MessageService) {}
 
-    
-
     onEdit() {
     	this.messageService.editMessage(this.message);
     }
+    
     onDelete() {
       this.messageService.deleteMessage(this.message)
          .subscribe(
